@@ -21,19 +21,19 @@ void L298N::init()
 
 void L298N::drive(int speed)
 {
-    if (speed > 0)                         //Move forward
+    if (speed > 0)                         // Move forward
     {
         digitalWrite(IN1, HIGH);
         digitalWrite(IN2, LOW);
         analogWrite(ENA, speed);
     }
-    else if (speed < 0)                    //Move backward
+    else if (speed < 0)                    // Move backward
     {
         digitalWrite(IN1, LOW);
         digitalWrite(IN2, HIGH);
         analogWrite(ENA, -speed);
     }
-    else                                    //Stop the motor
+    else                                    // Stop 
     {
         digitalWrite(IN1, LOW);
         digitalWrite(IN2, LOW);
