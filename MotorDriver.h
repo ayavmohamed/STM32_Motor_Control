@@ -2,7 +2,21 @@
 #define MOTOR_DRIVER_H
 
 class MotorDriver {
+ 
+protected :
+
+    int limitSpeed(int speed){
+        if(speed>255){
+            return 255;
+        }
+        else if (speed<-255){
+            return -255;
+        }
+        return speed;
+    }
+
 public:
+
     virtual void init() = 0;                      // Initialize the motor driver
     virtual void drive(int speed) = 0;            // Drive the motor at a specified speed
     virtual ~MotorDriver() {}                    // Virtual destructor for cleanup for child classes

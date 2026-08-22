@@ -21,6 +21,8 @@ void L298N::init()
 
 void L298N::drive(int speed)
 {
+    speed=limitSpeed(speed);
+    
     if (speed > 0)                         // Move forward
     {
         digitalWrite(IN1, HIGH);

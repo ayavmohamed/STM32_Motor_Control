@@ -18,6 +18,8 @@ void CytronMD10A::init()
 
 void CytronMD10A::drive(int speed)
 {
+    speed=limitSpeed(speed);
+    
     if (speed > 0)                                        // Move forward
     {
         digitalWrite(DIR, HIGH);

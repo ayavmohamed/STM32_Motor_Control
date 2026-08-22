@@ -18,6 +18,8 @@ void BTS7960::init()
 
 void BTS7960::drive(int speed)
 {
+    speed=limitSpeed(speed);
+
     if (speed > 0)                    // Move forward
     {
         analogWrite(RPWM, speed);
